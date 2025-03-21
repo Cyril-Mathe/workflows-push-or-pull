@@ -8,15 +8,9 @@ jobs:
       - name: Is it a push ?
         if: ${{ github.event_name == 'push' }}
         run: echo "It's a push"
-      - name: It's not a push
-        if: ${{ github.event_name != 'push' }}
-        run: echo "It's a not a push"
   pull:
     runs-on: ubuntu-latest
     steps:
       - name: Is it a pull ?
         if: ${{ github.event_name == 'pull_request' }}
         run: echo "It's a pull request"
-      - name: It's not a pull ?
-        if: ${{ github.event_name != 'pull_request' }}
-        run: echo "It's not a pull request"
