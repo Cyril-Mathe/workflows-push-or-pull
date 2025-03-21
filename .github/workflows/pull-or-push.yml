@@ -6,11 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Is it a push ?
-        if: ${{ on == 'push' }}
+        if: ${{ github.event_name == 'push' }}
         run: echo "C'est un push"
   pull:
     runs-on: ubuntu-latest
     steps:
       - name: Is it a pull ?
-        if: ${{ on == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' }}
         run: echo "C'est une pull request"
