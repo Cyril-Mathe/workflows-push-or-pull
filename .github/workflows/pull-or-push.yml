@@ -1,0 +1,16 @@
+name: PushOrPull
+on: [push, pull_request]
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is it a push ?
+        if: ${{ on == 'push' }}
+        run: echo "C'est un push"
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Is it a pull ?
+        if: ${{ on == 'pull_request' }}
+        run: echo "C'est une pull request"
